@@ -210,7 +210,9 @@
         "imageSku": "byol",
         "imageOffer": "vmseries1",
         "fwpublicIPName": "[concat(parameters('vmName'), '-mgmt-pip')]",
-        "nicName": "[parameters('vnic0Name')]",
+        "vnic0Name": "[parameters('vnic0Name')]",
+		"vnic1Name": "[parameters('vnic1Name')]",
+		"vnic2Name": "[parameters('vnic2Name')]",
         "FWPrivateIPAddressUntrust": "[parameters('subnet1StartAddress')]",
         "FWPrivateIPAddressTrust": "[parameters('subnet2StartAddress')]",
         "publicIPAddressType": "Dynamic",
@@ -467,8 +469,14 @@
                     "imagePublisher": {
                         "value": "[variables('imagePublisher')]"
                     },
-                    "nicName": {
-                        "value": "[variables('nicName')]"
+					"vnic0Name": {
+                        "value": "[variables('vnic0Name')]"
+                    },
+                    "vnic1Name": {
+                        "value": "[variables('vnic1Name')]"
+                    },
+					"vnic2Name": {
+                        "value": "[variables('vnic2Name')]"
                     },
                     "vmSize": {
                         "value": "[parameters('vmSize')]"
